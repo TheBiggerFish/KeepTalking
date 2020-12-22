@@ -4,7 +4,7 @@ class SolutionInterface:
         pass
 
 class WireSolution:
-    def __init__(self,wire):
+    def __init__(self,wire:int):
         self.wire = wire
     def __eq__(self,other):
         return self.wire == other.wire
