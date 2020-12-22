@@ -1,14 +1,14 @@
 from bomb import Bomb
 
 class Simulation:
-    def __init__(self,num_modules:int,time:int):
-        self.bomb = Bomb(num_modules,time)
+    def __init__(self,num_modules:int,minutes:int=0,seconds:int=0):
+        self.bomb = Bomb(num_modules,minutes,seconds)
 
     def pass_time(self) -> bool:
-        self.time = max(self.time-1,0)
-        return self.time > 0
+        if self.bomb.is_solved():
+            return False
+        return self.bomb.pass_time()
 
-    def take_action(self):
-        pass
-
+    def take_action(self,module_index):
+        self.bomb.module_action(module_index)
 

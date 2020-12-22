@@ -61,7 +61,10 @@ class Timer:
         return Timer(minutes,seconds)
     
     def __str__(self) -> str:
-        return '[{minutes}:{seconds}]'.format(minutes=self.minutes,seconds=self.seconds)
+        return '[{minutes}:{seconds:0>2}]'.format(minutes=self.minutes,seconds=self.seconds)
+
+    def contains_digit(self,digit:int):
+        return str(digit) in str(self)
 
 class Serial:
     min_len = 6
