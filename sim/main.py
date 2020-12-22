@@ -11,7 +11,7 @@ def main():
     if sim.bomb.is_solved():
         print("CONGRATS!")
     else:
-        print("YOU DIED")
+        print("BOOM")
 
 
 if __name__ == "__main__":

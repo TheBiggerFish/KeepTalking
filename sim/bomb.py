@@ -69,6 +69,10 @@ class Bomb:
                 return False
         return True
 
+    def has_strikes(self, strikes:int):
+        if self.strikes >= strikes:
+            return True
+
     def module_action(self,mod_index:int):
         module = self.get_module(mod_index)
 
@@ -112,7 +116,9 @@ class Bomb:
             pass
 
         if correct:
-            module.status = ModuleStatus.SOLVED 
+            module.status = ModuleStatus.SOLVED
+        else:
+            self.strikes += 1
 
     def pass_time(self) -> bool:
         return self.timer.step()

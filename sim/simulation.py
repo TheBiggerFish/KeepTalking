@@ -7,6 +7,8 @@ class Simulation:
     def pass_time(self) -> bool:
         if self.bomb.is_solved():
             return False
+        if self.bomb.has_strikes(3):
+            return False
         return self.bomb.pass_time()
 
     def take_action(self,module_index):
